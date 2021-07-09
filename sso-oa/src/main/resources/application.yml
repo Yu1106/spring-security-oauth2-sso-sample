@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8086
   servlet:
     context-path: /oa
 
@@ -11,13 +11,14 @@ spring:
 security:
   oauth2:
     client:
-      client-id: oa
-      client-secret: oa_secret
-      access-token-uri: http://localhost:8888/oauth/token
-      user-authorization-uri: http://localhost:8888/oauth/authorize
+      client-id: clientapp
+      client-secret: 12345678
+      access-token-uri: http://localhost:8080/oauth/token
+      user-authorization-uri: http://localhost:8080/oauth/authorize
     resource:
       jwt:
-        key-uri: http://localhost:8888/oauth/token_key
+        key-uri: http://localhost:8080/oauth/token_key
+        key-value: eforce-secret
 
 crm:
   profile-uri: http://localhost:8090/crm/system/profile

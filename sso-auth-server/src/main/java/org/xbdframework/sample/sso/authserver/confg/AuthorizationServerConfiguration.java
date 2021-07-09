@@ -42,9 +42,9 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .secret(passwordEncoder.encode("oa_secret"))
                 .scopes("all")
                 .authorizedGrantTypes("authorization_code", "refresh_token")
-                .redirectUris("http://localhost:8080/oa/login", "http://www.baidu.com")
+                .redirectUris("http://localhost:8080/oa/login")
                 .accessTokenValiditySeconds(7200)
-                .autoApprove(true)
+                .autoApprove(false)
 
                 .and()
 
@@ -55,7 +55,7 @@ public class AuthorizationServerConfiguration extends AuthorizationServerConfigu
                 .authorizedGrantTypes("authorization_code", "refresh_token")
                 .redirectUris("http://localhost:8090/crm/login")
                 .accessTokenValiditySeconds(7200)
-                .autoApprove(true)
+                .autoApprove(false)
 
                 .and()
                 .build();
